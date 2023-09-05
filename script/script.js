@@ -112,18 +112,33 @@ function activateEditListeners() {
       categorySelects.value = itemsArray[i].category
     })
   })
-
-  prioritySelects.addEventListener('change', (event) => {
-    const selectedIndex = event.target.selectedIndex
-    itemsArray[i].priority = event.target.options[selectedIndex].text
-    localStorage.setItem('items', JSON.stringify(itemsArray))
+  const seleccionPendiente=document.querySelectorAll("#priority").forEach((select,i)=>{
+    select.addEventListener("change",(event)=>{
+      itemsArray[i].priority=event.target.value;
+      localStorage.setItem("items",JSON.stringify(itemsArray));
+      location.reload();
+    })
   })
 
-  categorySelects.addEventListener('change', (event) => {
-    const selectedIndex = event.target.selectedIndex
-    itemsArray[i].category = event.target.options[selectedIndex].text
-    localStorage.setItem('items', JSON.stringify(itemsArray))
+  const seleccionarCompletado=document.querySelectorAll("#category").forEach((select,i)=>{
+    select.addEventListener("change",(event)=>{
+      itemsArray[i].category=event.target.value;
+      localStorage.setItem("items",JSON.stringify(itemsArray));
+      location.reload();
+    })
   })
+  
+  // prioritySelects.addEventListener('change', (event) => {
+  //   const selectedIndex = event.target.selectedIndex
+  //   itemsArray[i].priority = event.target.options[selectedIndex].text
+  //   localStorage.setItem('items', JSON.stringify(itemsArray))
+  // })
+
+  // categorySelects.addEventListener('change', (event) => {
+  //   const selectedIndex = event.target.selectedIndex
+  //   itemsArray[i].category = event.target.options[selectedIndex].text
+  //   localStorage.setItem('items', JSON.stringify(itemsArray))
+  // })
 }
 // Codigo DOM #5
 // Permite que la acción guardar el nuevo nombre de la tarea cuando decides editar y que impacte el DOM del HTML, acá debes agegar algoritmo de actualizar tarea
