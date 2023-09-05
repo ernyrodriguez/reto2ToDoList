@@ -149,6 +149,7 @@ function activateCancelListeners() {
       updateController[i].style.display = 'none'
       inputs[i].disabled = true
       inputs[i].style.border = 'none'
+      location.reload();
     })
   })
 }
