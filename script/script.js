@@ -22,6 +22,13 @@ function countPend(){
 
   return contadorPendientes.length;
 }
+function borrarTarea(posicion){
+
+  itemsArray=itemsArray.filter((tarea,i) => i !== posicion && tarea);
+
+  localStorage.setItem("items",JSON.stringify(itemsArray))
+  location.reload();
+}
 
 function displayFooter() {
   let page = `      
@@ -78,6 +85,7 @@ function activateDeleteListeners() {
   deleteBtn.forEach((db, i) => {
     db.addEventListener('click', () => {
       //Llamar la función que elimina la tarea
+      borrarTarea(i);
     })
   })
 }
