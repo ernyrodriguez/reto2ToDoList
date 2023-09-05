@@ -2,7 +2,7 @@
  para que las tareas queden guardadas en caso
  de que la aplicación se cierre.*/
  
- let itemsArray = localStorage.getItem("items") ?
+let itemsArray = localStorage.getItem("items") ?
  JSON.parse(localStorage.getItem('items')): []
 
 function crearTarea (nombreTarea) {
@@ -16,6 +16,11 @@ function crearTarea (nombreTarea) {
   itemsArray.push(objetoTarea)
   localStorage.setItem("items",JSON.stringify(itemsArray))
   location.reload();
+}
+function countPend(){
+  const contadorPendientes= itemsArray.filter((tarea)=>tarea.checked===false)
+
+  return contadorPendientes.length;
 }
 
 function displayFooter() {
