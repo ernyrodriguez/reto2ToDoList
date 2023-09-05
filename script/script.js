@@ -34,6 +34,21 @@ function borrarTarea(posicion){
   localStorage.setItem("items",JSON.stringify(itemsArray))
   location.reload();
 }
+function borrarCompletados() {
+  const completedTasks = itemsArray.filter((item) => item.checked === false)
+
+  localStorage.setItem('items', JSON.stringify(completedTasks))
+  location.reload()
+}
+
+function showAll() {
+  const all = document.querySelectorAll('.input-controller')
+  all.forEach((element) => {
+    const check = element.querySelector('.toggle')
+    element.style.display = ''
+  })
+  localStorage.setItem('items', JSON.stringify(itemsArray))
+}
 
 function displayFooter() {
   let page = `      
