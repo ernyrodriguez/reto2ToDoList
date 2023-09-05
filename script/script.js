@@ -79,6 +79,7 @@ function activateCheckboxListeners() {
     ch.addEventListener('click', () => {
       itemsArray[i].checked = ch.checked
       localStorage.setItem('items', JSON.stringify(itemsArray))
+      location.reload();
     })
   })
 }
