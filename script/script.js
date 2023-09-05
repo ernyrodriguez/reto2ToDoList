@@ -62,6 +62,19 @@ function showPend() {
   })
   localStorage.setItem('items', JSON.stringify(itemsArray))
 }
+function showComp() {
+  const completados = document.querySelectorAll('.input-controller')
+  completados.forEach((element) => {
+    const check = element.querySelector('.toggle')
+    if (!check.checked) {
+      element.style.display = 'none'
+    }
+    if (check.checked) {
+      element.style.display = ''
+    }
+  })
+  localStorage.setItem('items', JSON.stringify(itemsArray))
+}
 function displayFooter() {
   let page = `      
      
