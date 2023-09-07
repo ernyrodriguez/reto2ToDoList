@@ -266,8 +266,11 @@ function displayItems() {
                               }>Emprendimiento</option> 
                             </select>
                         </div>
-                        <i class="fa-solid fa-pen-to-square editBtn"></i>
-                        <i class="fa-solid fa-x deleteBtn"></i>
+                       
+                        <span class="material-symbols-outlined editBtn">
+draw
+</span>
+                        <span class="material-symbols-outlined deleteBtn">delete</span>
                       </div>
                     </div>
                     <div class="update-controller">
